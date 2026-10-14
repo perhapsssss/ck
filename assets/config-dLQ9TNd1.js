@@ -1,0 +1,1 @@
+export{t as BUCKET,n as OWNER_EMAIL,r as SUPABASE_KEY,i as SUPABASE_URL}from"./config-COOHK7fY.js";

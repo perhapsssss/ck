@@ -1,0 +1,1 @@
+var e=`1290022806@qq.com`,t=`private-files`,n=`https://dhqmkhhdncnzeoeepoee.supabase.co`,r=`sb_publishable_WYJNcNjj36GNmspoWagO4Q_9Y_Bu1vK`;export{n as i,e as n,r,t};

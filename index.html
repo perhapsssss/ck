@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f8fc" />
+  <meta name="description" content="云屿 · 在不同设备之间，留一份自己的文件空间。" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://dhqmkhhdncnzeoeepoee.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <title>云屿 · 私人文件空间</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script type="module" crossorigin src="./assets/index-Bi2E0FVE.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/config-COOHK7fY.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-BcHGwASt.css">
+</head>
+<body>
+  <div id="boot" class="boot">正在连接你的文件空间…</div>
+  <section id="login-view" class="login-layout" hidden>
+    <div class="login-story">
+      <a class="brand" href="./"><span class="brand-icon">云</span><span>云屿<span class="brand-en">CLOUD ISLAND</span></span></a>
+      <div class="story-content"><span class="eyebrow">A LITTLE SPACE, ALL YOURS</span><h1>文件有归处。<br>灵感，随身带。</h1><p>从电脑到手机，让重要的文件<br>在你的设备之间，自在流动。</p><div class="cloud-art" aria-hidden="true"><div class="art-orbit"></div><div class="art-card card-back">✦ <span>每一点灵感</span></div><div class="art-card card-front"><span class="art-file">↥</span><strong>都在这里</strong><small>YOUR PRIVATE SPACE</small></div><span class="art-dot dot-one"></span><span class="art-dot dot-two"></span></div></div>
+      <div class="story-footer">一个账号 · 多台设备 · 同一份云端文件</div>
+    </div>
+    <main class="login-main"><div class="login-card"><span class="pill">仅你可访问</span><h2>欢迎回到云屿</h2><p class="muted">登录你的私人文件空间。</p>
+      <form id="login-form"><label for="email">邮箱地址</label><input id="email" type="email" autocomplete="username" value="1290022806@qq.com" required /><label for="password">登录密码</label><input id="password" type="password" autocomplete="current-password" placeholder="输入你设置的密码" required /><button id="login-button" class="primary full" type="submit">登录我的空间 <span>→</span></button></form>
+      <button id="forgot" class="text-button" type="button">忘记密码 / 设置初始密码</button>
+      <p id="login-message" class="inline-message" role="status" aria-live="polite"></p>
+      <div class="login-note"><span>◇</span><p>仅限你的已验证账号。<br>文件保存在私有云存储中。</p></div>
+    </div><span class="login-copyright">云屿 · 给文件一处安静的地方</span></main>
+  </section>
+
+  <div id="app-view" class="app-layout" hidden>
+    <aside class="sidebar"><a class="brand" href="./"><span class="brand-icon">云</span><span>云屿<span class="brand-en">CLOUD ISLAND</span></span></a><span class="nav-label">我的空间</span><button class="nav-item active" id="nav-all"><span>▦</span>全部文件<span id="nav-count" class="count">0</span></button><div class="sidebar-bottom"><div class="capacity-top"><span>存储空间</span><span id="capacity-percent">—</span></div><progress id="capacity" max="100" value="0" aria-label="存储空间使用比例"></progress><p id="capacity-label">用量尚未加载</p><small>参考容量 1 GB · 以套餐为准</small><div class="private-note">◇ 私有空间，仅自己可见</div></div></aside>
+    <main class="workspace"><header class="topbar"><span class="breadcrumb">我的空间 <span>/</span> 全部文件</span><div class="account"><span class="avatar">Z</span><span id="account-email"></span><button id="logout" class="quiet" type="button">退出</button></div></header>
+      <section class="page-content"><div class="page-heading"><div><span class="eyebrow">YOUR FILES, EVERYWHERE</span><h1>我的文件<span class="heading-dot">.</span></h1><p class="muted">在这里收好文件，在任何设备继续。</p></div><button id="upload-button" class="primary" type="button"><span>＋</span> 上传文件</button></div>
+      <input id="file-input" type="file" multiple hidden />
+      <button id="dropzone" class="dropzone" type="button"><span class="drop-icon">↥</span><span><strong>把文件拖到这里，或点击上传</strong><small>支持任意文件类型 · 单文件最大 50 MB</small></span><span class="drop-tag">云端保存</span></button>
+      <section id="upload-panel" class="upload-panel" hidden aria-label="上传任务"><div class="panel-title"><strong>上传任务</strong><button id="clear-uploads" class="text-button" type="button">清除已完成</button></div><div id="upload-list"></div></section>
+      <div class="file-toolbar"><div class="file-heading"><h2>全部文件</h2><span id="file-count" class="count">—</span></div><div class="tools"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索文件名…" aria-label="搜索文件名" /></label><select id="sort" aria-label="文件排序"><option value="time">最近修改</option><option value="name">文件名称</option><option value="size">文件大小</option></select><button id="refresh" class="icon-button" type="button" title="刷新文件" aria-label="刷新文件">↻</button></div></div>
+      <p id="app-message" class="inline-message" role="status" aria-live="polite"></p>
+      <div class="file-table"><div class="table-head"><span>文件名称</span><span>大小</span><span>修改时间</span><span>操作</span></div><div id="file-list"></div><div id="empty-state" class="empty-state" hidden><span class="empty-icon">▤</span><h3>留一点空间，给下一份灵感</h3><p>上传第一个文件，就能在其他设备上找到它。</p><button id="empty-upload" class="secondary" type="button">上传第一个文件</button></div></div>
+      <footer class="workspace-footer"><span><i id="sync-dot"></i><span id="sync-state">尚未同步</span></span><span>打开、返回页面及每 30 秒刷新</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="edit-dialog"><form id="edit-form"><div class="dialog-top"><h2 id="edit-title">重命名文件</h2><button type="button" class="quiet" id="edit-close" aria-label="关闭">×</button></div><label for="edit-value" id="edit-label">文件名称</label><input id="edit-value" required /><p id="edit-message" class="inline-message" role="status"></p><div class="dialog-actions"><button id="edit-cancel" class="secondary" type="button">取消</button><button id="edit-submit" class="primary" type="submit">保存</button></div></form></dialog>
+  <dialog id="delete-dialog"><form id="delete-form"><h2>删除这个文件？</h2><p id="delete-name"></p><p class="muted">删除会同步到所有设备，此操作无法撤销。</p><p id="delete-message" class="inline-message" role="status"></p><div class="dialog-actions"><button id="delete-cancel" type="button" class="secondary">取消</button><button id="delete-submit" type="submit" class="danger">确认删除</button></div></form></dialog>
+  <noscript>请启用 JavaScript 以登录和管理云端文件。</noscript>
+</body>
+</html>
